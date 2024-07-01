@@ -1,0 +1,283 @@
+|--- Cholesterol Level_Normal <= 0.50
+|   |--- Cholesterol Level_Low <= 0.50
+|   |   |--- Fatigue_Yes <= 0.50
+|   |   |   |--- Age <= 36.50
+|   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |--- class: Positive
+|   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |--- class: Negative
+|   |   |   |--- Age >  36.50
+|   |   |   |   |--- Age <= 62.50
+|   |   |   |   |   |--- Gender_Male <= 0.50
+|   |   |   |   |   |   |--- Age <= 43.50
+|   |   |   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |   |   |--- Age <= 41.00
+|   |   |   |   |   |   |   |   |   |--- Age <= 39.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |   |--- Age >  39.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |   |--- Age >  41.00
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |--- Age >  43.50
+|   |   |   |   |   |   |   |--- Blood Pressure_Low <= 0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Age <= 50.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |   |   |   |--- Age >  50.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |--- Blood Pressure_Low >  0.50
+|   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |--- Gender_Male >  0.50
+|   |   |   |   |   |   |--- Age <= 42.50
+|   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |--- Age >  42.50
+|   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |--- Age >  62.50
+|   |   |   |   |   |--- class: Positive
+|   |   |--- Fatigue_Yes >  0.50
+|   |   |   |--- Gender_Male <= 0.50
+|   |   |   |   |--- Age <= 29.50
+|   |   |   |   |   |--- class: Negative
+|   |   |   |   |--- Age >  29.50
+|   |   |   |   |   |--- Age <= 52.50
+|   |   |   |   |   |   |--- Age <= 43.50
+|   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |--- Age >  43.50
+|   |   |   |   |   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Difficulty Breathing_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |   |--- Difficulty Breathing_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |--- Age >  52.50
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |--- Gender_Male >  0.50
+|   |   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |   |--- Age <= 52.50
+|   |   |   |   |   |   |--- Age <= 32.50
+|   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |--- Age >  32.50
+|   |   |   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |   |   |--- Age <= 46.50
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Age <= 42.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- Age >  42.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |   |--- Age >  46.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |   |   |--- Age <= 40.00
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |--- Age >  40.00
+|   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |--- Age >  52.50
+|   |   |   |   |   |   |--- Difficulty Breathing_Yes <= 0.50
+|   |   |   |   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |--- Difficulty Breathing_Yes >  0.50
+|   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |   |--- Age <= 41.00
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |--- Age >  41.00
+|   |   |   |   |   |   |--- Age <= 57.50
+|   |   |   |   |   |   |   |--- Age <= 47.50
+|   |   |   |   |   |   |   |   |--- Age <= 43.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |--- Age >  43.50
+|   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |--- Age >  47.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |--- Age >  57.50
+|   |   |   |   |   |   |   |--- class: Positive
+|   |--- Cholesterol Level_Low >  0.50
+|   |   |--- Gender_Male <= 0.50
+|   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |--- Age <= 38.50
+|   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |--- Age >  38.50
+|   |   |   |   |   |--- class: Negative
+|   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |--- Age <= 60.00
+|   |   |   |   |   |--- Age <= 38.50
+|   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |--- Age >  38.50
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |--- Age >  60.00
+|   |   |   |   |   |--- class: Negative
+|   |   |--- Gender_Male >  0.50
+|   |   |   |--- Age <= 53.50
+|   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |--- class: Positive
+|   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |--- Age <= 36.50
+|   |   |   |   |   |   |--- Fatigue_Yes <= 0.50
+|   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |--- Fatigue_Yes >  0.50
+|   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |--- Age >  36.50
+|   |   |   |   |   |   |--- class: Negative
+|   |   |   |--- Age >  53.50
+|   |   |   |   |--- Fatigue_Yes <= 0.50
+|   |   |   |   |   |--- class: Positive
+|   |   |   |   |--- Fatigue_Yes >  0.50
+|   |   |   |   |   |--- Age <= 57.50
+|   |   |   |   |   |   |--- Difficulty Breathing_Yes <= 0.50
+|   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |--- Difficulty Breathing_Yes >  0.50
+|   |   |   |   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |--- Age >  57.50
+|   |   |   |   |   |   |--- class: Positive
+|--- Cholesterol Level_Normal >  0.50
+|   |--- Difficulty Breathing_Yes <= 0.50
+|   |   |--- Age <= 53.50
+|   |   |   |--- Age <= 38.50
+|   |   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |   |--- class: Negative
+|   |   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |--- Age <= 30.50
+|   |   |   |   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |   |   |   |--- Fatigue_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |--- Fatigue_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |--- Age >  30.50
+|   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |--- class: Negative
+|   |   |   |--- Age >  38.50
+|   |   |   |   |--- Age <= 41.00
+|   |   |   |   |   |--- Blood Pressure_Low <= 0.50
+|   |   |   |   |   |   |--- Age <= 39.50
+|   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |--- Age >  39.50
+|   |   |   |   |   |   |   |--- Gender_Male <= 0.50
+|   |   |   |   |   |   |   |   |--- Fatigue_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |--- Fatigue_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |--- Gender_Male >  0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Fatigue_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |   |   |   |--- Fatigue_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |--- Blood Pressure_Low >  0.50
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |--- Age >  41.00
+|   |   |   |   |   |--- Fatigue_Yes <= 0.50
+|   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |--- Fatigue_Yes >  0.50
+|   |   |   |   |   |   |--- Gender_Male <= 0.50
+|   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |--- Gender_Male >  0.50
+|   |   |   |   |   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |   |   |   |   |--- Age <= 47.50
+|   |   |   |   |   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |   |--- Age >  47.50
+|   |   |   |   |   |   |   |   |   |--- class: Negative
+|   |   |--- Age >  53.50
+|   |   |   |--- Age <= 62.50
+|   |   |   |   |--- Gender_Male <= 0.50
+|   |   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |--- Gender_Male >  0.50
+|   |   |   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |   |   |--- Blood Pressure_Normal <= 0.50
+|   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |--- Blood Pressure_Normal >  0.50
+|   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |--- Age >  62.50
+|   |   |   |   |--- Gender_Male <= 0.50
+|   |   |   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |--- Gender_Male >  0.50
+|   |   |   |   |   |--- class: Negative
+|   |--- Difficulty Breathing_Yes >  0.50
+|   |   |--- Age <= 30.50
+|   |   |   |--- Gender_Male <= 0.50
+|   |   |   |   |--- class: Positive
+|   |   |   |--- Gender_Male >  0.50
+|   |   |   |   |--- Age <= 29.50
+|   |   |   |   |   |--- class: Positive
+|   |   |   |   |--- Age >  29.50
+|   |   |   |   |   |--- class: Negative
+|   |   |--- Age >  30.50
+|   |   |   |--- Fever_Yes <= 0.50
+|   |   |   |   |--- Fatigue_Yes <= 0.50
+|   |   |   |   |   |--- class: Negative
+|   |   |   |   |--- Fatigue_Yes >  0.50
+|   |   |   |   |   |--- Age <= 39.00
+|   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |--- Age >  39.00
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |--- Fever_Yes >  0.50
+|   |   |   |   |--- Age <= 36.50
+|   |   |   |   |   |--- Cough_Yes <= 0.50
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |--- Cough_Yes >  0.50
+|   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |--- Age >  36.50
+|   |   |   |   |   |--- Age <= 41.00
+|   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |--- Age >  41.00
+|   |   |   |   |   |   |--- Fatigue_Yes <= 0.50
+|   |   |   |   |   |   |   |--- class: Negative
+|   |   |   |   |   |   |--- Fatigue_Yes >  0.50
+|   |   |   |   |   |   |   |--- Age <= 52.50
+|   |   |   |   |   |   |   |   |--- class: Positive
+|   |   |   |   |   |   |   |--- Age >  52.50
+|   |   |   |   |   |   |   |   |--- class: Negative
