@@ -1,64 +1,55 @@
-import pandas as pd
-from sklearn.tree import DecisionTreeClassifier, export_text
-from sklearn.model_selection import train_test_split
+import csv
 
-# Load the dataset
-data = pd.read_csv('../data/dataset.csv')
+# Mapeamento dos valores categóricos para valores numéricos ou simbólicos
 
-# Convert categorical variables to numeric
-data['Fever'] = data['Fever'].map({'Yes': 1, 'No': 0})
-data['Cough'] = data['Cough'].map({'Yes': 1, 'No': 0})
-data['Fatigue'] = data['Fatigue'].map({'Yes': 1, 'No': 0})
-data['Difficulty Breathing'] = data['Difficulty Breathing'].map({'Yes': 1, 'No': 0})
-data['Gender'] = data['Gender'].map({'Male': 1, 'Female': 0})
-data['Blood Pressure'] = data['Blood Pressure'].map({'Low': 0, 'Normal': 1, 'High': 2})
-data['Cholesterol Level'] = data['Cholesterol Level'].map({'Low': 0, 'Normal': 1, 'High': 2})
-data['Outcome Variable'] = data['Outcome Variable'].map({'Positive': 1, 'Negative': 0})
 
-# Define features and target
-features = ['Fever', 'Cough', 'Fatigue', 'Difficulty Breathing', 'Age', 'Gender', 'Blood Pressure', 'Cholesterol Level']
-target = 'Outcome Variable'
+def map_value(value, mapping):
+    return mapping.get(value, value)
 
-# Split the data
-X = data[features]
-y = data[target]
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Train a Decision Tree model
-clf = DecisionTreeClassifier()
-clf.fit(X_train, y_train)
+# Mapeamento específico para cada coluna
+fever_mapping = {'Yes': 1, 'No': 0}
+cough_mapping = {'Yes': 1, 'No': 0}
+fatigue_mapping = {'Yes': 1, 'No': 0}
+difficulty_breathing_mapping = {'Yes': 1, 'No': 0}
+gender_mapping = {'Male': 1, 'Female': 0}
+blood_pressure_mapping = {'Low': 0, 'Normal': 1, 'High': 2}
+cholesterol_level_mapping = {'Low': 0, 'Normal': 1, 'High': 2}
+outcome_mapping = {'Positive': 'positive', 'Negative': 'negative'}
 
-# Export the decision tree to a text format
-tree_text = export_text(clf, feature_names=features)
-print(tree_text)
+# Ler o CSV e converter para cláusulas Prolog
 
-# Helper function to generate Prolog rules from the decision tree
-def tree_to_prolog(tree, feature_names, node_index=0, rule_prefix=""):
-    if tree.children_left[node_index] == tree.children_right[node_index]:  # Leaf node
-        outcome = "positive" if tree.value[node_index][0][1] > tree.value[node_index][0][0] else "negative"
-        prolog_rule = f"{rule_prefix.strip(', ')} :- outcome({outcome})."
-        return [prolog_rule]
-    
-    rules = []
-    feature = feature_names[tree.feature[node_index]]
-    threshold = tree.threshold[node_index]
 
-    left_rule_prefix = f"{rule_prefix}{feature} <= {threshold:.2f}, "
-    right_rule_prefix = f"{rule_prefix}{feature} > {threshold:.2f}, "
+def csv_to_prolog(input_file, output_file):
+    with open(input_file, mode='r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        with open(output_file, mode='w') as prologfile:
+            for row in reader:
+                disease = row['Disease'].lower().replace(' ', '_')
+                fever = map_value(row['Fever'], fever_mapping)
+                cough = map_value(row['Cough'], cough_mapping)
+                fatigue = map_value(row['Fatigue'], fatigue_mapping)
+                difficulty_breathing = map_value(
+                    row['Difficulty Breathing'], difficulty_breathing_mapping)
+                age = row['Age']
+                gender = map_value(row['Gender'], gender_mapping)
+                blood_pressure = map_value(
+                    row['Blood Pressure'], blood_pressure_mapping)
+                cholesterol_level = map_value(
+                    row['Cholesterol Level'], cholesterol_level_mapping)
+                outcome = map_value(row['Outcome Variable'], outcome_mapping)
 
-    rules += tree_to_prolog(tree, feature_names, tree.children_left[node_index], left_rule_prefix)
-    rules += tree_to_prolog(tree, feature_names, tree.children_right[node_index], right_rule_prefix)
+                # Formatar a cláusula Prolog
+                prolog_clause = f"disease({disease}, {fever}, {cough}, {fatigue}, {difficulty_breathing}, {
+                    age}, {gender}, {blood_pressure}, {cholesterol_level}, {outcome}).\n"
 
-    return rules
+                # Escrever a cláusula no arquivo de saída
+                prologfile.write(prolog_clause)
 
-# Generate Prolog rules
-rules = tree_to_prolog(clf.tree_, features)
 
-# Write rules to a Prolog file
-with open('../knowledge_base/disease_decision_tree.pl', 'w') as f:
-    f.write(":- dynamic outcome/1.\n")
-    for rule in rules:
-        f.write(rule + "\n")
+# Caminhos dos arquivos
+input_csv_file = './data/dataset.csv'
+output_prolog_file = './knowledge_base/disease_decision_tree.pl'
 
-print("Prolog rules have been written to disease_decision_tree.pl")
-
+# Executar a conversão
+csv_to_prolog(input_csv_file, output_prolog_file)

@@ -1,85 +1,347 @@
-:- dynamic_outcome/1.
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age <= 53.50, Gender <= 0.50, Cough <= 0.50, Blood_Pressure <= 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age <= 53.50, Gender <= 0.50, Cough <= 0.50, Blood_Pressure > 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age <= 53.50, Gender <= 0.50, Cough > 0.50, Blood_Pressure <= 1.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age <= 53.50, Gender <= 0.50, Cough > 0.50, Blood_Pressure > 1.50, Age <= 39.00 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age <= 53.50, Gender <= 0.50, Cough > 0.50, Blood_Pressure > 1.50, Age > 39.00 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age <= 53.50, Gender > 0.50, Blood_Pressure <= 1.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age <= 53.50, Gender > 0.50, Blood_Pressure > 1.50, Age <= 42.50, Cough <= 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age <= 53.50, Gender > 0.50, Blood_Pressure > 1.50, Age <= 42.50, Cough > 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age <= 53.50, Gender > 0.50, Blood_Pressure > 1.50, Age > 42.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age > 53.50, Difficulty_Breathing <= 0.50, Gender <= 0.50, Cholesterol_Level <= 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age > 53.50, Difficulty_Breathing <= 0.50, Gender <= 0.50, Cholesterol_Level > 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age > 53.50, Difficulty_Breathing <= 0.50, Gender > 0.50, Cholesterol_Level <= 0.50, Blood_Pressure <= 1.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age > 53.50, Difficulty_Breathing <= 0.50, Gender > 0.50, Cholesterol_Level <= 0.50, Blood_Pressure > 1.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age > 53.50, Difficulty_Breathing <= 0.50, Gender > 0.50, Cholesterol_Level > 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever <= 0.50, Age > 53.50, Difficulty_Breathing > 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age <= 29.50, Difficulty_Breathing <= 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age <= 29.50, Difficulty_Breathing > 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure <= 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age <= 47.50, Cholesterol_Level <= 0.50, Blood_Pressure <= 1.50, Cough <= 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age <= 47.50, Cholesterol_Level <= 0.50, Blood_Pressure <= 1.50, Cough > 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age <= 47.50, Cholesterol_Level <= 0.50, Blood_Pressure > 1.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age <= 47.50, Cholesterol_Level > 0.50, Cough <= 0.50, Age <= 41.00, Age <= 30.50, Fatigue <= 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age <= 47.50, Cholesterol_Level > 0.50, Cough <= 0.50, Age <= 41.00, Age <= 30.50, Fatigue > 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age <= 47.50, Cholesterol_Level > 0.50, Cough <= 0.50, Age <= 41.00, Age > 30.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age <= 47.50, Cholesterol_Level > 0.50, Cough <= 0.50, Age > 41.00 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age <= 47.50, Cholesterol_Level > 0.50, Cough > 0.50, Age <= 42.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age <= 47.50, Cholesterol_Level > 0.50, Cough > 0.50, Age > 42.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 0.50, Age > 47.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing > 0.50, Age <= 33.50, Gender <= 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing > 0.50, Age <= 33.50, Gender > 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing > 0.50, Age > 33.50, Age <= 36.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing > 0.50, Age > 33.50, Age > 36.50, Age <= 41.00 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing > 0.50, Age > 33.50, Age > 36.50, Age > 41.00, Age <= 43.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing > 0.50, Age > 33.50, Age > 36.50, Age > 41.00, Age > 43.50, Fatigue <= 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age <= 53.50, Difficulty_Breathing > 0.50, Age > 33.50, Age > 36.50, Age > 41.00, Age > 43.50, Fatigue > 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age > 53.50, Difficulty_Breathing <= 0.50, Cholesterol_Level <= 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age > 53.50, Difficulty_Breathing <= 0.50, Cholesterol_Level > 0.50, Gender <= 0.50, Blood_Pressure <= 1.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age > 53.50, Difficulty_Breathing <= 0.50, Cholesterol_Level > 0.50, Gender <= 0.50, Blood_Pressure > 1.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age > 53.50, Difficulty_Breathing <= 0.50, Cholesterol_Level > 0.50, Gender > 0.50, Blood_Pressure <= 1.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age > 53.50, Difficulty_Breathing <= 0.50, Cholesterol_Level > 0.50, Gender > 0.50, Blood_Pressure > 1.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age > 53.50, Difficulty_Breathing > 0.50, Blood_Pressure <= 1.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age > 53.50, Difficulty_Breathing > 0.50, Blood_Pressure > 1.50, Cough <= 0.50 :- outcome(positive).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age <= 62.50, Age > 29.50, Age > 53.50, Difficulty_Breathing > 0.50, Blood_Pressure > 1.50, Cough > 0.50 :- outcome(negative).
-Cholesterol_Level <= 1.50, Fever > 0.50, Age > 62.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age <= 36.50, Age <= 29.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age <= 36.50, Age > 29.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender <= 0.50, Blood_Pressure <= 1.50, Age <= 41.00, Age <= 39.00 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender <= 0.50, Blood_Pressure <= 1.50, Age <= 41.00, Age > 39.00 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender <= 0.50, Blood_Pressure <= 1.50, Age > 41.00 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender <= 0.50, Blood_Pressure > 1.50, Age <= 43.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender <= 0.50, Blood_Pressure > 1.50, Age > 43.50, Fever <= 0.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender <= 0.50, Blood_Pressure > 1.50, Age > 43.50, Fever > 0.50, Age <= 50.00 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender <= 0.50, Blood_Pressure > 1.50, Age > 43.50, Fever > 0.50, Age > 50.00, Cough <= 0.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender <= 0.50, Blood_Pressure > 1.50, Age > 43.50, Fever > 0.50, Age > 50.00, Cough > 0.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender > 0.50, Age <= 42.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age <= 62.50, Gender > 0.50, Age > 42.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue <= 0.50, Age > 36.50, Age > 62.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender <= 0.50, Age <= 29.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender <= 0.50, Age > 29.50, Age <= 52.50, Age <= 43.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender <= 0.50, Age > 29.50, Age <= 52.50, Age > 43.50, Fever <= 0.50, Cough <= 0.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender <= 0.50, Age > 29.50, Age <= 52.50, Age > 43.50, Fever <= 0.50, Cough > 0.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender <= 0.50, Age > 29.50, Age <= 52.50, Age > 43.50, Fever > 0.50, Cough <= 0.50, Difficulty_Breathing <= 0.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender <= 0.50, Age > 29.50, Age <= 52.50, Age > 43.50, Fever > 0.50, Cough <= 0.50, Difficulty_Breathing > 0.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender <= 0.50, Age > 29.50, Age <= 52.50, Age > 43.50, Fever > 0.50, Cough > 0.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender <= 0.50, Age > 29.50, Age > 52.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age <= 52.50, Age <= 32.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age <= 52.50, Age > 32.50, Cough <= 0.50, Age <= 46.50, Blood_Pressure <= 1.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age <= 52.50, Age > 32.50, Cough <= 0.50, Age <= 46.50, Blood_Pressure > 1.50, Age <= 42.50, Difficulty_Breathing <= 0.50, Age <= 37.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age <= 52.50, Age > 32.50, Cough <= 0.50, Age <= 46.50, Blood_Pressure > 1.50, Age <= 42.50, Difficulty_Breathing <= 0.50, Age > 37.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age <= 52.50, Age > 32.50, Cough <= 0.50, Age <= 46.50, Blood_Pressure > 1.50, Age <= 42.50, Difficulty_Breathing > 0.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age <= 52.50, Age > 32.50, Cough <= 0.50, Age <= 46.50, Blood_Pressure > 1.50, Age > 42.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age <= 52.50, Age > 32.50, Cough <= 0.50, Age > 46.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age <= 52.50, Age > 32.50, Cough > 0.50, Age <= 40.00 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age <= 52.50, Age > 32.50, Cough > 0.50, Age > 40.00 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age > 52.50, Difficulty_Breathing <= 0.50, Blood_Pressure <= 1.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age > 52.50, Difficulty_Breathing <= 0.50, Blood_Pressure > 1.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever <= 0.50, Age > 52.50, Difficulty_Breathing > 0.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever > 0.50, Age <= 41.00 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever > 0.50, Age > 41.00, Age <= 57.50, Age <= 47.50, Age <= 43.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever > 0.50, Age > 41.00, Age <= 57.50, Age <= 47.50, Age > 43.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever > 0.50, Age > 41.00, Age <= 57.50, Age > 47.50, Difficulty_Breathing <= 0.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever > 0.50, Age > 41.00, Age <= 57.50, Age > 47.50, Difficulty_Breathing > 0.50, Cough <= 0.50 :- outcome(negative).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever > 0.50, Age > 41.00, Age <= 57.50, Age > 47.50, Difficulty_Breathing > 0.50, Cough > 0.50 :- outcome(positive).
-Cholesterol_Level > 1.50, Fatigue > 0.50, Gender > 0.50, Fever > 0.50, Age > 41.00, Age > 57.50 :- outcome(positive).
+disease(influenza, 1, 0, 1, 1, 19, 0, 0, 1, positive).
+disease(common_cold, 0, 1, 1, 0, 25, 0, 1, 1, negative).
+disease(eczema, 0, 1, 1, 0, 25, 0, 1, 1, negative).
+disease(asthma, 1, 1, 0, 1, 25, 1, 1, 1, positive).
+disease(asthma, 1, 1, 0, 1, 25, 1, 1, 1, positive).
+disease(eczema, 1, 0, 0, 0, 25, 0, 1, 1, positive).
+disease(influenza, 1, 1, 1, 1, 25, 0, 1, 1, positive).
+disease(influenza, 1, 1, 1, 1, 25, 0, 1, 1, positive).
+disease(hyperthyroidism, 0, 1, 0, 0, 28, 0, 1, 1, negative).
+disease(hyperthyroidism, 0, 1, 0, 0, 28, 0, 1, 1, negative).
+disease(asthma, 1, 0, 0, 1, 28, 1, 2, 1, positive).
+disease(allergic_rhinitis, 0, 1, 1, 0, 29, 0, 1, 0, negative).
+disease(anxiety_disorders, 0, 1, 0, 0, 29, 0, 1, 2, negative).
+disease(common_cold, 0, 0, 0, 0, 29, 0, 0, 1, negative).
+disease(diabetes, 0, 0, 0, 0, 29, 1, 0, 1, negative).
+disease(gastroenteritis, 0, 1, 0, 0, 29, 0, 1, 1, negative).
+disease(pancreatitis, 1, 0, 0, 0, 29, 0, 2, 1, negative).
+disease(rheumatoid_arthritis, 0, 1, 1, 1, 29, 0, 2, 2, negative).
+disease(depression, 1, 1, 1, 1, 29, 1, 2, 1, positive).
+disease(liver_cancer, 1, 1, 1, 1, 29, 0, 1, 1, positive).
+disease(stroke, 1, 1, 1, 1, 29, 0, 1, 1, positive).
+disease(urinary_tract_infection, 1, 1, 1, 0, 29, 1, 2, 2, positive).
+disease(dengue_fever, 1, 0, 1, 0, 30, 0, 1, 1, negative).
+disease(dengue_fever, 1, 0, 1, 0, 30, 0, 1, 1, negative).
+disease(eczema, 0, 1, 1, 0, 30, 1, 2, 2, negative).
+disease(gastroenteritis, 1, 1, 1, 0, 30, 1, 2, 2, negative).
+disease(hepatitis, 1, 1, 1, 1, 30, 1, 2, 1, negative).
+disease(kidney_cancer, 0, 0, 1, 0, 30, 1, 1, 1, negative).
+disease(migraine, 1, 0, 0, 0, 30, 0, 1, 1, negative).
+disease(migraine, 0, 1, 1, 0, 30, 0, 1, 1, negative).
+disease(muscular_dystrophy, 0, 0, 1, 0, 30, 1, 2, 2, negative).
+disease(sinusitis, 0, 1, 1, 0, 30, 1, 1, 1, negative).
+disease(ulcerative_colitis, 1, 1, 0, 0, 30, 0, 1, 1, negative).
+disease(ulcerative_colitis, 0, 1, 1, 0, 30, 0, 1, 1, negative).
+disease(asthma, 1, 1, 0, 1, 30, 0, 1, 1, positive).
+disease(asthma, 1, 1, 0, 1, 30, 0, 1, 1, positive).
+disease(asthma, 1, 1, 1, 1, 30, 0, 1, 1, positive).
+disease(bipolar_disorder, 0, 0, 1, 0, 30, 0, 2, 2, positive).
+disease(bronchitis, 1, 1, 0, 1, 30, 0, 0, 1, positive).
+disease(bronchitis, 1, 1, 1, 1, 30, 1, 2, 2, positive).
+disease(bronchitis, 1, 1, 1, 1, 30, 1, 2, 2, positive).
+disease(cerebral_palsy, 0, 0, 1, 1, 30, 0, 1, 1, positive).
+disease(colorectal_cancer, 0, 0, 1, 0, 30, 0, 1, 2, positive).
+disease(eczema, 1, 0, 0, 0, 30, 1, 2, 2, positive).
+disease(hypertensive_heart_disease, 0, 0, 1, 0, 30, 0, 2, 2, positive).
+disease(influenza, 1, 1, 1, 0, 30, 1, 2, 1, positive).
+disease(influenza, 1, 1, 1, 1, 30, 0, 1, 1, positive).
+disease(multiple_sclerosis, 0, 0, 1, 0, 30, 0, 2, 2, positive).
+disease(urinary_tract_infection, 1, 0, 0, 0, 30, 0, 1, 1, positive).
+disease(asthma, 0, 0, 0, 1, 31, 1, 1, 0, negative).
+disease(osteoporosis, 0, 0, 0, 1, 31, 1, 0, 1, negative).
+disease(common_cold, 1, 0, 1, 1, 31, 1, 2, 2, positive).
+disease(migraine, 1, 0, 0, 0, 31, 0, 1, 1, positive).
+disease(pneumonia, 1, 0, 1, 1, 32, 0, 2, 1, positive).
+disease(allergic_rhinitis, 0, 0, 1, 0, 35, 0, 1, 0, negative).
+disease(asthma, 0, 1, 1, 1, 35, 0, 1, 2, negative).
+disease(asthma, 1, 1, 1, 1, 35, 0, 1, 1, negative).
+disease(asthma, 0, 1, 1, 1, 35, 0, 2, 1, negative).
+disease(asthma, 0, 1, 1, 1, 35, 0, 2, 1, negative).
+disease(atherosclerosis, 0, 0, 1, 0, 35, 1, 1, 1, negative).
+disease(chronic_obstructive_pulmonary, 1, 1, 1, 1, 35, 1, 1, 1, negative).
+disease(common_cold, 1, 1, 1, 0, 35, 1, 2, 1, negative).
+disease(eczema, 0, 1, 0, 0, 35, 1, 2, 1, negative).
+disease(epilepsy, 0, 0, 1, 0, 35, 1, 2, 2, negative).
+disease(hypertension, 1, 1, 1, 0, 35, 0, 2, 1, negative).
+disease(hyperthyroidism, 1, 1, 1, 0, 35, 0, 1, 1, negative).
+disease(obsessive-compulsive_disorde, 0, 0, 1, 0, 35, 1, 1, 1, negative).
+disease(pneumonia, 1, 1, 1, 1, 35, 0, 1, 1, negative).
+disease(pneumonia, 1, 1, 1, 1, 35, 0, 1, 1, negative).
+disease(psoriasis, 1, 0, 0, 0, 35, 0, 1, 0, negative).
+disease(psoriasis, 0, 1, 1, 0, 35, 0, 1, 0, negative).
+disease(rubella, 1, 0, 1, 0, 35, 0, 2, 1, negative).
+disease(rubella, 1, 0, 1, 0, 35, 0, 2, 1, negative).
+disease(urinary_tract_infection, 0, 1, 1, 0, 35, 1, 2, 2, negative).
+disease(asthma, 1, 1, 0, 1, 35, 1, 1, 1, positive).
+disease(asthma, 1, 1, 0, 1, 35, 1, 1, 1, positive).
+disease(cirrhosis, 0, 0, 1, 0, 35, 0, 1, 2, positive).
+disease(conjunctivitis, 0, 1, 0, 0, 35, 0, 2, 2, positive).
+disease(depression, 0, 0, 1, 0, 35, 0, 1, 2, positive).
+disease(gastroenteritis, 1, 0, 1, 1, 35, 1, 0, 2, positive).
+disease(hyperthyroidism, 1, 1, 1, 0, 35, 1, 2, 2, positive).
+disease(hyperthyroidism, 1, 1, 1, 0, 35, 1, 2, 2, positive).
+disease(kidney_cancer, 0, 0, 1, 0, 35, 1, 2, 2, positive).
+disease(liver_cancer, 0, 0, 1, 0, 35, 0, 2, 2, positive).
+disease(liver_disease, 0, 0, 1, 0, 35, 1, 2, 2, positive).
+disease(malaria, 1, 0, 0, 0, 35, 1, 2, 2, positive).
+disease(malaria, 1, 0, 0, 0, 35, 1, 2, 2, positive).
+disease(migraine, 0, 1, 1, 0, 35, 1, 2, 2, positive).
+disease(migraine, 1, 0, 0, 0, 35, 1, 2, 2, positive).
+disease(pancreatitis, 0, 0, 1, 0, 35, 1, 1, 2, positive).
+disease(rheumatoid_arthritis, 1, 1, 1, 0, 35, 1, 1, 0, positive).
+disease(rheumatoid_arthritis, 0, 0, 1, 0, 35, 0, 1, 0, positive).
+disease(spina_bifida, 0, 0, 1, 0, 35, 0, 1, 1, positive).
+disease(ulcerative_colitis, 0, 0, 1, 0, 35, 1, 2, 2, positive).
+disease(ulcerative_colitis, 1, 0, 0, 0, 35, 1, 2, 2, positive).
+disease(urinary_tract_infection, 1, 0, 1, 0, 35, 0, 1, 2, positive).
+disease(allergic_rhinitis, 0, 1, 0, 0, 38, 0, 0, 1, negative).
+disease(depression, 0, 0, 0, 0, 38, 0, 1, 2, negative).
+disease(gastroenteritis, 0, 0, 0, 0, 38, 1, 1, 0, negative).
+disease(influenza, 0, 0, 0, 0, 38, 1, 1, 1, negative).
+disease(kidney_disease, 0, 0, 1, 0, 38, 0, 0, 1, negative).
+disease(liver_cancer, 1, 1, 0, 0, 38, 0, 2, 1, negative).
+disease(liver_disease, 0, 1, 0, 1, 38, 1, 0, 1, negative).
+disease(osteoporosis, 0, 1, 0, 0, 38, 0, 1, 2, negative).
+disease(stroke, 1, 1, 0, 0, 38, 0, 2, 1, negative).
+disease(anxiety_disorders, 1, 0, 1, 1, 38, 1, 2, 2, positive).
+disease(diabetes, 1, 0, 1, 1, 38, 1, 2, 0, positive).
+disease(migraine, 1, 1, 0, 0, 38, 1, 2, 2, positive).
+disease(osteoarthritis, 1, 1, 1, 0, 38, 1, 2, 2, positive).
+disease(pneumonia, 1, 1, 1, 1, 38, 1, 1, 1, positive).
+disease(klinefelter_syndrome, 0, 0, 1, 0, 39, 0, 1, 1, positive).
+disease(acne, 0, 0, 1, 0, 40, 1, 1, 1, negative).
+disease(brain_tumor, 0, 0, 1, 0, 40, 1, 1, 1, negative).
+disease(bronchitis, 0, 1, 0, 1, 40, 0, 1, 1, negative).
+disease(cystic_fibrosis, 0, 0, 1, 1, 40, 1, 2, 2, negative).
+disease(diabetes, 1, 0, 0, 0, 40, 0, 2, 2, negative).
+disease(glaucoma, 0, 0, 1, 0, 40, 1, 2, 1, negative).
+disease(osteoarthritis, 0, 0, 1, 0, 40, 1, 2, 1, negative).
+disease(rabies, 1, 1, 0, 0, 40, 0, 2, 1, negative).
+disease(rabies, 1, 1, 0, 0, 40, 0, 2, 1, negative).
+disease(asthma, 1, 0, 1, 0, 40, 1, 0, 1, positive).
+disease(asthma, 1, 1, 0, 1, 40, 0, 1, 1, positive).
+disease(asthma, 1, 1, 0, 1, 40, 0, 1, 1, positive).
+disease(asthma, 0, 0, 1, 1, 40, 1, 2, 2, positive).
+disease(asthma, 1, 0, 1, 1, 40, 1, 1, 2, positive).
+disease(asthma, 1, 0, 1, 1, 40, 1, 1, 2, positive).
+disease(chickenpox, 0, 1, 0, 0, 40, 1, 1, 2, positive).
+disease(chickenpox, 0, 1, 0, 0, 40, 1, 1, 2, positive).
+disease(coronary_artery_disease, 0, 0, 1, 0, 40, 0, 2, 2, positive).
+disease(fibromyalgia, 0, 0, 1, 0, 40, 0, 2, 2, positive).
+disease(gastroenteritis, 1, 1, 1, 0, 40, 1, 2, 2, positive).
+disease(hemophilia, 0, 0, 1, 0, 40, 0, 1, 1, positive).
+disease(hyperthyroidism, 0, 0, 1, 0, 40, 1, 2, 2, positive).
+disease(hypoglycemia, 0, 0, 1, 0, 40, 0, 2, 2, positive).
+disease(lymphoma, 0, 1, 0, 0, 40, 0, 1, 2, positive).
+disease(pneumonia, 1, 1, 1, 1, 40, 0, 1, 2, positive).
+disease(psoriasis, 0, 1, 1, 0, 40, 1, 2, 1, positive).
+disease(psoriasis, 1, 0, 0, 0, 40, 1, 2, 1, positive).
+disease(psoriasis, 0, 1, 0, 0, 40, 0, 1, 2, positive).
+disease(tuberculosis, 1, 1, 1, 1, 40, 1, 2, 2, positive).
+disease(tuberculosis, 1, 1, 1, 1, 40, 1, 2, 2, positive).
+disease(anxiety_disorders, 0, 0, 0, 0, 42, 1, 0, 1, negative).
+disease(common_cold, 1, 1, 0, 0, 42, 0, 2, 2, negative).
+disease(depression, 1, 0, 0, 1, 42, 1, 2, 1, negative).
+disease(influenza, 0, 1, 0, 0, 42, 0, 1, 2, negative).
+disease(kidney_cancer, 1, 0, 0, 0, 42, 0, 1, 1, negative).
+disease(liver_cancer, 1, 0, 1, 1, 42, 1, 1, 0, negative).
+disease(liver_disease, 1, 0, 0, 1, 42, 0, 1, 1, negative).
+disease(lung_cancer, 1, 0, 1, 1, 42, 1, 1, 0, negative).
+disease(migraine, 1, 1, 1, 0, 42, 1, 2, 2, negative).
+disease(osteoarthritis, 0, 0, 1, 0, 42, 1, 1, 0, negative).
+disease(stroke, 1, 0, 1, 0, 42, 1, 1, 0, negative).
+disease(urinary_tract_infection, 0, 1, 1, 1, 42, 0, 1, 0, negative).
+disease(diabetes, 1, 1, 1, 0, 42, 1, 2, 1, positive).
+disease(hypothyroidism, 1, 1, 1, 0, 42, 0, 2, 2, positive).
+disease(hypothyroidism, 1, 1, 1, 0, 42, 0, 2, 2, positive).
+disease(kidney_disease, 1, 0, 1, 0, 42, 0, 2, 0, positive).
+disease(pneumonia, 0, 1, 1, 1, 43, 0, 2, 1, positive).
+disease(allergic_rhinitis, 0, 1, 1, 0, 45, 1, 2, 1, negative).
+disease(autism_spectrum_disorder, 0, 0, 1, 0, 45, 1, 1, 1, negative).
+disease(crohns_disease, 1, 0, 1, 0, 45, 1, 2, 1, negative).
+disease(hepatitis, 1, 0, 1, 0, 45, 0, 2, 2, negative).
+disease(hepatitis, 1, 0, 1, 0, 45, 0, 2, 2, negative).
+disease(hyperglycemia, 0, 0, 1, 0, 45, 1, 1, 1, negative).
+disease(kidney_cancer, 0, 1, 1, 1, 45, 1, 1, 0, negative).
+disease(kidney_disease, 1, 1, 0, 0, 45, 1, 1, 2, negative).
+disease(melanoma, 1, 0, 1, 0, 45, 1, 2, 1, negative).
+disease(migraine, 0, 0, 0, 0, 45, 0, 0, 1, negative).
+disease(ovarian_cancer, 0, 0, 1, 0, 45, 1, 1, 1, negative).
+disease(pancreatitis, 0, 1, 1, 1, 45, 1, 1, 0, negative).
+disease(rheumatoid_arthritis, 1, 0, 0, 0, 45, 1, 1, 1, negative).
+disease(stroke, 0, 0, 1, 0, 45, 1, 1, 1, negative).
+disease(turner_syndrome, 0, 0, 1, 0, 45, 1, 2, 2, negative).
+disease(turner_syndrome, 0, 0, 1, 0, 45, 1, 2, 2, negative).
+disease(urinary_tract_infection, 0, 0, 0, 0, 45, 0, 0, 1, negative).
+disease(zika_virus, 0, 1, 1, 0, 45, 0, 2, 2, negative).
+disease(zika_virus, 0, 1, 1, 0, 45, 0, 2, 2, negative).
+disease(allergic_rhinitis, 1, 1, 1, 0, 45, 1, 2, 1, positive).
+disease(anxiety_disorders, 1, 1, 1, 0, 45, 1, 2, 1, positive).
+disease(asthma, 1, 1, 0, 1, 45, 1, 1, 1, positive).
+disease(asthma, 1, 1, 0, 1, 45, 1, 1, 1, positive).
+disease(cataracts, 0, 0, 1, 0, 45, 0, 1, 2, positive).
+disease(crohns_disease, 0, 0, 1, 0, 45, 0, 2, 2, positive).
+disease(crohns_disease, 1, 1, 1, 0, 45, 0, 2, 2, positive).
+disease(depression, 0, 0, 1, 0, 45, 0, 2, 2, positive).
+disease(diabetes, 1, 0, 1, 0, 45, 0, 2, 2, positive).
+disease(diabetes, 0, 1, 1, 0, 45, 1, 1, 2, positive).
+disease(hypertension, 1, 0, 1, 0, 45, 1, 1, 2, positive).
+disease(hypothyroidism, 0, 0, 1, 0, 45, 0, 2, 2, positive).
+disease(liver_disease, 1, 1, 1, 0, 45, 0, 1, 2, positive).
+disease(multiple_sclerosis, 1, 0, 0, 0, 45, 0, 2, 2, positive).
+disease(multiple_sclerosis, 1, 0, 0, 0, 45, 0, 2, 2, positive).
+disease(osteoarthritis, 1, 0, 1, 1, 45, 1, 2, 1, positive).
+disease(osteoporosis, 1, 1, 1, 0, 45, 0, 1, 2, positive).
+disease(pneumocystis_pneumonia, 1, 1, 1, 0, 45, 0, 2, 2, positive).
+disease(pneumonia, 1, 1, 1, 1, 45, 1, 2, 2, positive).
+disease(scoliosis, 0, 0, 0, 0, 45, 0, 2, 2, positive).
+disease(sickle_cell_anemia, 0, 0, 1, 0, 45, 0, 1, 1, positive).
+disease(tetanus, 0, 0, 1, 0, 45, 1, 1, 2, positive).
+disease(tetanus, 0, 0, 1, 0, 45, 1, 1, 2, positive).
+disease(hypertension, 0, 0, 0, 0, 48, 0, 0, 2, negative).
+disease(hypothyroidism, 0, 0, 1, 0, 48, 1, 1, 2, negative).
+disease(hypothyroidism, 0, 0, 1, 0, 48, 1, 1, 2, negative).
+disease(allergic_rhinitis, 1, 0, 0, 0, 50, 1, 2, 2, negative).
+disease(anemia, 0, 0, 1, 0, 50, 1, 1, 1, negative).
+disease(anxiety_disorders, 0, 0, 1, 0, 50, 1, 1, 1, negative).
+disease(cholera, 1, 0, 1, 1, 50, 0, 2, 2, negative).
+disease(cholera, 1, 0, 1, 1, 50, 0, 2, 2, negative).
+disease(crohns_disease, 1, 1, 1, 0, 50, 1, 1, 2, negative).
+disease(crohns_disease, 0, 0, 1, 0, 50, 1, 1, 2, negative).
+disease(depression, 0, 1, 1, 0, 50, 0, 0, 0, negative).
+disease(diabetes, 0, 1, 0, 0, 50, 1, 1, 2, negative).
+disease(endometriosis, 1, 0, 0, 0, 50, 1, 2, 1, negative).
+disease(hypertension, 0, 1, 0, 0, 50, 0, 1, 0, negative).
+disease(hypothyroidism, 1, 1, 1, 0, 50, 1, 1, 2, negative).
+disease(kidney_cancer, 0, 1, 0, 0, 50, 1, 0, 2, negative).
+disease(kidney_disease, 0, 1, 0, 1, 50, 1, 1, 1, negative).
+disease(pancreatitis, 0, 1, 0, 0, 50, 1, 0, 2, negative).
+disease(rheumatoid_arthritis, 0, 1, 0, 0, 50, 0, 0, 1, negative).
+disease(sepsis, 1, 1, 1, 0, 50, 1, 1, 1, negative).
+disease(sleep_apnea, 1, 0, 1, 1, 50, 1, 2, 2, negative).
+disease(urinary_tract_infection, 1, 1, 0, 1, 50, 1, 2, 1, negative).
+disease(asthma, 1, 1, 1, 1, 50, 0, 1, 2, positive).
+disease(bronchitis, 1, 1, 1, 1, 50, 1, 2, 2, positive).
+disease(down_syndrome, 0, 0, 1, 0, 50, 0, 2, 2, positive).
+disease(ebola_virus, 1, 1, 1, 1, 50, 1, 1, 1, positive).
+disease(ebola_virus, 1, 1, 1, 1, 50, 1, 1, 1, positive).
+disease(eczema, 0, 1, 0, 0, 50, 0, 2, 2, positive).
+disease(gastroenteritis, 1, 1, 1, 1, 50, 0, 2, 1, positive).
+disease(klinefelter_syndrome, 0, 0, 1, 0, 50, 0, 1, 1, positive).
+disease(liver_cancer, 0, 1, 1, 1, 50, 1, 2, 2, positive).
+disease(lyme_disease, 1, 0, 0, 0, 50, 1, 1, 2, positive).
+disease(lyme_disease, 1, 0, 0, 0, 50, 1, 1, 2, positive).
+disease(pancreatic_cancer, 0, 0, 1, 0, 50, 0, 2, 2, positive).
+disease(pneumothorax, 0, 0, 1, 1, 50, 0, 2, 2, positive).
+disease(stroke, 0, 1, 1, 1, 50, 1, 2, 2, positive).
+disease(ulcerative_colitis, 0, 1, 1, 0, 50, 0, 1, 2, positive).
+disease(hypertension, 1, 1, 0, 0, 52, 1, 1, 0, negative).
+disease(multiple_sclerosis, 0, 1, 1, 0, 52, 1, 1, 1, negative).
+disease(multiple_sclerosis, 0, 1, 1, 0, 52, 1, 1, 1, negative).
+disease(appendicitis, 1, 0, 1, 0, 55, 1, 1, 1, negative).
+disease(bronchitis, 0, 0, 1, 1, 55, 1, 2, 2, negative).
+disease(bronchitis, 1, 1, 1, 1, 55, 1, 2, 1, negative).
+disease(common_cold, 1, 0, 1, 1, 55, 1, 1, 0, negative).
+disease(diabetes, 0, 1, 0, 0, 55, 0, 1, 2, negative).
+disease(esophageal_cancer, 0, 0, 1, 0, 55, 1, 1, 1, negative).
+disease(hiv/aids, 1, 0, 0, 0, 55, 0, 2, 2, negative).
+disease(hiv/aids, 1, 0, 0, 0, 55, 0, 2, 2, negative).
+disease(hypertension, 0, 1, 0, 0, 55, 0, 1, 0, negative).
+disease(liver_disease, 0, 1, 1, 0, 55, 1, 2, 0, negative).
+disease(marfan_syndrome, 0, 0, 1, 0, 55, 1, 2, 2, negative).
+disease(migraine, 0, 1, 1, 1, 55, 0, 1, 0, negative).
+disease(osteoporosis, 0, 0, 1, 0, 55, 1, 2, 1, negative).
+disease(parkinsons_disease, 0, 0, 1, 0, 55, 0, 1, 0, negative).
+disease(parkinsons_disease, 0, 0, 1, 0, 55, 0, 1, 0, negative).
+disease(anxiety_disorders, 1, 1, 0, 0, 55, 0, 1, 0, positive).
+disease(coronary_artery_disease, 0, 0, 1, 0, 55, 0, 1, 1, positive).
+disease(coronary_artery_disease, 0, 0, 1, 0, 55, 0, 1, 1, positive).
+disease(hemorrhoids, 0, 0, 0, 0, 55, 0, 2, 2, positive).
+disease(hypertension, 1, 0, 1, 0, 55, 1, 2, 1, positive).
+disease(hypothyroidism, 0, 0, 1, 0, 55, 0, 2, 2, positive).
+disease(osteoarthritis, 1, 1, 0, 0, 55, 0, 2, 2, positive).
+disease(osteoporosis, 1, 0, 1, 1, 55, 1, 2, 0, positive).
+disease(osteoporosis, 0, 1, 1, 0, 55, 0, 1, 1, positive).
+disease(osteoporosis, 1, 0, 1, 0, 55, 0, 1, 1, positive).
+disease(osteoporosis, 1, 0, 1, 0, 55, 0, 1, 1, positive).
+disease(polycystic_ovary_syndrome, 1, 1, 0, 0, 55, 0, 1, 1, positive).
+disease(systemic_lupus_erythematosus, 0, 1, 1, 0, 55, 0, 2, 2, positive).
+disease(typhoid_fever, 0, 1, 0, 0, 55, 1, 1, 0, positive).
+disease(typhoid_fever, 0, 1, 0, 0, 55, 1, 1, 0, positive).
+disease(influenza, 1, 1, 1, 1, 56, 1, 2, 2, positive).
+disease(pneumonia, 1, 1, 0, 1, 57, 1, 1, 2, negative).
+disease(breast_cancer, 0, 0, 1, 0, 60, 1, 2, 2, negative).
+disease(coronary_artery_disease, 1, 1, 0, 0, 60, 1, 2, 2, negative).
+disease(coronary_artery_disease, 1, 1, 0, 0, 60, 1, 2, 2, negative).
+disease(hyperthyroidism, 0, 0, 1, 0, 60, 1, 1, 1, negative).
+disease(measles, 1, 1, 0, 0, 60, 0, 2, 1, negative).
+disease(measles, 1, 1, 0, 0, 60, 0, 2, 1, negative).
+disease(osteoarthritis, 0, 1, 0, 1, 60, 0, 1, 1, negative).
+disease(osteomyelitis, 0, 0, 1, 0, 60, 1, 1, 1, negative).
+disease(osteoporosis, 1, 0, 0, 0, 60, 1, 2, 2, negative).
+disease(osteoporosis, 0, 1, 0, 0, 60, 1, 2, 2, negative).
+disease(osteoporosis, 0, 1, 0, 0, 60, 1, 2, 2, negative).
+disease(polio, 1, 1, 1, 0, 60, 1, 1, 1, negative).
+disease(asthma, 1, 1, 1, 1, 60, 0, 2, 2, positive).
+disease(chronic_kidney_disease, 0, 0, 1, 0, 60, 0, 1, 2, positive).
+disease(hemophilia, 0, 0, 1, 0, 60, 0, 1, 1, positive).
+disease(hepatitis_b, 0, 1, 1, 0, 60, 1, 1, 0, positive).
+disease(hepatitis_b, 0, 1, 1, 0, 60, 1, 1, 0, positive).
+disease(hypertension, 0, 0, 1, 0, 60, 0, 2, 1, positive).
+disease(hypertension, 1, 0, 1, 0, 60, 1, 2, 1, positive).
+disease(hypertension, 0, 0, 0, 0, 60, 0, 2, 2, positive).
+disease(kidney_cancer, 1, 1, 1, 0, 60, 0, 2, 1, positive).
+disease(kidney_disease, 1, 1, 1, 1, 60, 0, 2, 2, positive).
+disease(osteoporosis, 1, 0, 1, 0, 60, 1, 2, 1, positive).
+disease(pancreatitis, 1, 1, 1, 0, 60, 0, 2, 1, positive).
+disease(parkinsons_disease, 1, 1, 0, 0, 60, 1, 2, 1, positive).
+disease(parkinsons_disease, 1, 1, 0, 0, 60, 1, 2, 1, positive).
+disease(prader-willi_syndrome, 0, 0, 1, 0, 60, 0, 1, 1, positive).
+disease(rheumatoid_arthritis, 0, 0, 1, 0, 60, 0, 2, 2, positive).
+disease(thyroid_cancer, 0, 0, 1, 0, 60, 0, 2, 2, positive).
+disease(tuberculosis, 1, 1, 1, 0, 60, 0, 2, 2, positive).
+disease(bladder_cancer, 0, 0, 1, 0, 65, 1, 1, 1, negative).
+disease(diabetes, 0, 0, 1, 0, 65, 1, 1, 2, negative).
+disease(otitis_media, 1, 1, 1, 0, 65, 1, 1, 1, negative).
+disease(stroke, 1, 0, 1, 0, 65, 0, 2, 0, negative).
+disease(stroke, 1, 0, 1, 0, 65, 0, 2, 0, negative).
+disease(tourette_syndrome, 0, 0, 1, 0, 65, 1, 2, 2, negative).
+disease(urinary_tract_infection, 1, 0, 1, 0, 65, 1, 2, 1, negative).
+disease(alzheimers_disease, 0, 1, 0, 0, 65, 1, 1, 2, positive).
+disease(alzheimers_disease, 0, 1, 0, 0, 65, 1, 1, 2, positive).
+disease(alzheimers_disease, 0, 0, 1, 0, 65, 0, 2, 2, positive).
+disease(bronchitis, 1, 0, 1, 1, 65, 1, 2, 2, positive).
+disease(chronic_obstructive_pulmonary_disease, 1, 0, 1, 1, 65, 0, 2, 2, positive).
+disease(chronic_obstructive_pulmonary_disease, 1, 0, 1, 1, 65, 0, 2, 2, positive).
+disease(dementia, 0, 0, 1, 0, 65, 0, 2, 2, positive).
+disease(diabetes, 1, 1, 1, 0, 65, 0, 1, 2, positive).
+disease(diverticulitis, 0, 0, 1, 0, 65, 0, 2, 2, positive).
+disease(liver_cancer, 1, 1, 1, 0, 65, 0, 2, 2, positive).
+disease(lung_cancer, 1, 1, 1, 0, 65, 0, 2, 2, positive).
+disease(lung_cancer, 1, 0, 1, 0, 65, 0, 1, 2, positive).
+disease(mumps, 0, 0, 1, 0, 65, 1, 1, 2, positive).
+disease(mumps, 0, 0, 1, 0, 65, 1, 1, 2, positive).
+disease(osteoporosis, 0, 1, 1, 0, 65, 0, 2, 2, positive).
+disease(stroke, 1, 1, 1, 0, 65, 0, 2, 2, positive).
+disease(alzheimers_disease, 1, 0, 1, 0, 70, 0, 2, 1, negative).
+disease(alzheimers_disease, 1, 0, 1, 0, 70, 0, 2, 1, negative).
+disease(cholecystitis, 0, 0, 1, 0, 70, 1, 1, 1, negative).
+disease(chronic_obstructive_pulmonary_disease, 0, 1, 1, 1, 70, 1, 1, 2, negative).
+disease(chronic_obstructive_pulmonary_disease, 0, 1, 1, 1, 70, 1, 1, 2, negative).
+disease(osteoporosis, 1, 0, 0, 0, 70, 1, 1, 1, negative).
+disease(parkinsons_disease, 0, 0, 1, 0, 70, 1, 1, 1, negative).
+disease(prostate_cancer, 1, 1, 0, 0, 70, 1, 2, 1, negative).
+disease(schizophrenia, 0, 1, 1, 0, 70, 1, 1, 1, negative).
+disease(gout, 1, 0, 1, 0, 70, 0, 1, 2, positive).
+disease(migraine, 0, 0, 1, 0, 70, 0, 1, 1, positive).
+disease(stroke, 0, 1, 0, 0, 70, 1, 1, 2, positive).
+disease(stroke, 0, 1, 0, 0, 70, 1, 1, 2, positive).
+disease(testicular_cancer, 0, 0, 1, 0, 70, 0, 2, 2, positive).
+disease(tonsillitis, 1, 1, 1, 0, 70, 0, 2, 2, positive).
+disease(williams_syndrome, 0, 0, 1, 0, 70, 0, 1, 1, positive).
+disease(stroke, 1, 0, 1, 0, 80, 0, 2, 2, positive).
+disease(stroke, 1, 0, 1, 0, 80, 0, 2, 2, positive).
+disease(stroke, 1, 0, 1, 0, 85, 1, 2, 2, positive).
+disease(stroke, 1, 0, 1, 0, 85, 1, 2, 2, positive).
+disease(stroke, 1, 0, 1, 0, 90, 0, 2, 2, positive).
+disease(stroke, 1, 0, 1, 0, 90, 0, 2, 2, positive).
