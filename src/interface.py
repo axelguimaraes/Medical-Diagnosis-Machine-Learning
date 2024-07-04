@@ -1,6 +1,53 @@
 import PySimpleGUI as sg
 import subprocess
 
+# Função para ler o conteúdo do arquivo Prolog e retornar como uma string
+
+
+def read_prolog_file(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            file_content = file.read()
+            return file_content
+    except IOError as e:
+        print(f"Erro ao ler o arquivo {file_path}: {e}")
+        return None
+
+# Função para executar a consulta Prolog com base nos sintomas e dados inseridos
+
+
+def run_prolog_diagnosis(query, prolog_content):
+    try:
+        print(f"Prolog Query: {query}")  # Debug print
+        print(f"Prolog Content: {prolog_content}")  # Debug print
+
+        commands = prolog_content + query
+        print(f"Prolog Commands: {commands}")  # Debug print
+        # Inicializa o subprocesso SWI-Prolog
+
+        # Inicializa o subprocesso SWI-Prolog
+        p = subprocess.Popen('swipl', stdin=subprocess.PIPE,
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                             text=True, universal_newlines=True)
+        # Envia o conteúdo do arquivo Prolog para o subprocesso
+        stdout, stderr = p.communicate(input=commands)
+        if stderr:
+            print(f"Erro ao carregar o arquivo Prolog: {stderr}")
+
+        # Processa a saída para obter apenas a última linha com os resultados desejados
+        output_lines = stdout.strip().split('\n')
+        last_two_lines = output_lines[-2:]
+        result = ''.join(last_two_lines).strip()
+        print(result)
+        p.kill()
+        return result, None
+
+    except Exception as e:
+        print(f"Erro ao executar consulta Prolog: {e}")
+        return None, str(e)
+
+
+# Layout da interface gráfica usando PySimpleGUI
 layout = [
     [sg.Text("Expert System Interface")],
     [sg.Text("Enter Symptoms:")],
@@ -40,30 +87,20 @@ while True:
 
         print(f"Prolog Query: {query}")  # Debug print
 
-        # Executar a consulta Prolog
-        query_string = f"{query}"
+        # Ler o conteúdo do arquivo Prolog
+        prolog_file_path = 'C:/Users/MarcioRibeiro/Documents/IA_Recurso/knowledge_base/disease_decision_tree.pl'
+        prolog_content = read_prolog_file(prolog_file_path)
 
-        command = f'swipl -s C:/Users/MarcioRibeiro/Documents/IA_Recurso/knowledge_base/disease_decision_tree.pl'
-        print(f"Comando: {command}")
+        if prolog_content is None:
+            sg.popup_error(f"Erro ao ler o arquivo Prolog: {prolog_file_path}")
+            continue
 
-        # Inicializar o subprocesso SWI-Prolog
-        p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                             shell=True, text=True, universal_newlines=True)
+        # Executa a consulta Prolog com base nos sintomas e dados inseridos
+        result, error = run_prolog_diagnosis(query, prolog_content)
 
-        # Enviar a consulta Prolog para o subprocesso
-        stdout, stderr = p.communicate(input=query_string)
-
-        # Verificar se houve erro
-        if stderr:
-            print(f"Erro encontrado: {stderr}")
-            sg.popup_error(f"Erro encontrado: {stderr}")
+        if error:
+            sg.popup_error(error)
         else:
-            # Saída padrão contém o resultado da consulta
-            result = stdout.strip()  # Remove espaços em branco extras
-            print(f"Resultado da consulta: {result}")
             sg.popup("Resultado do diagnóstico", f"O diagnóstico é: {result}")
-
-        # Terminar o processo subprocesso
-        p.kill()
 
 window.close()

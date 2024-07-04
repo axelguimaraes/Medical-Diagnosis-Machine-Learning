@@ -39,9 +39,9 @@ def csv_to_prolog(input_file, output_file):
                     row['Cholesterol Level'], cholesterol_level_mapping)
                 outcome = map_value(row['Outcome Variable'], outcome_mapping)
 
-                # Formatar a cláusula Prolog
-                prolog_clause = f"disease({disease}, {fever}, {cough}, {fatigue}, {difficulty_breathing}, {
-                    age}, {gender}, {blood_pressure}, {cholesterol_level}, {outcome}).\n"
+                # Formatar a cláusula Prolog com assertz
+                prolog_clause = f"assertz(disease({disease}, {fever}, {cough}, {fatigue}, {difficulty_breathing}, {
+                    age}, {gender}, {blood_pressure}, {cholesterol_level}, {outcome})).\n"
 
                 # Escrever a cláusula no arquivo de saída
                 prologfile.write(prolog_clause)
