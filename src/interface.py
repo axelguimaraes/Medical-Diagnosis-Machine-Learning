@@ -88,7 +88,7 @@ while True:
         print(f"Prolog Query: {query}")  # Debug print
 
         # Ler o conteúdo do arquivo Prolog
-        prolog_file_path = 'C:/Users/MarcioRibeiro/Documents/IA_Recurso/knowledge_base/disease_decision_tree.pl'
+        prolog_file_path = '../knowledge_base/disease_decision_tree.pl'
         prolog_content = read_prolog_file(prolog_file_path)
 
         if prolog_content is None:
