@@ -36,12 +36,22 @@ def run_prolog_diagnosis(query, prolog_content):
 
         # Processa a saída para obter apenas a última linha com os resultados desejados
         output_lines = stdout.strip().split('\n')
-        last_two_lines = output_lines[-2:]
-        result = ''.join(last_two_lines).strip()
-        print(result)
+        # Get the string that contain Disease and Outcome
+        filtered_lines = [
+            line for line in output_lines if 'Disease' in line or 'Outcome' in line]
+        # Captura as últimas duas linhas que contêm "Disease" e "Outcome"
         p.kill()
-        return result, None
-
+        print(f"Saída padrão: {stdout}")
+        print(f"Filtra as linhas: {filtered_lines}")
+        if len(filtered_lines) >= 2:
+            last_two_lines = filtered_lines[-2:]
+            result = '\n'.join(last_two_lines).strip()
+            print("Últimas duas respostas com 'Disease' e 'Outcome':")
+            print(result)
+            return result, None
+        else:
+            print("Não há dados suficientes na saída para capturar as últimas duas respostas com 'Disease' e 'Outcome'.")
+            return None, "Não há dados suficientes na saída para capturar as últimas duas respostas com 'Disease' e 'Outcome'."
     except Exception as e:
         print(f"Erro ao executar consulta Prolog: {e}")
         return None, str(e)
@@ -88,7 +98,7 @@ while True:
         print(f"Prolog Query: {query}")  # Debug print
 
         # Ler o conteúdo do arquivo Prolog
-        prolog_file_path = '../knowledge_base/disease_decision_tree.pl'
+        prolog_file_path = './knowledge_base/disease_decision_tree.pl'
         prolog_content = read_prolog_file(prolog_file_path)
 
         if prolog_content is None:
