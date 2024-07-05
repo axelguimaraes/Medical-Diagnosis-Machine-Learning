@@ -102,7 +102,7 @@ def convert_to_prolog(input_file, output_file):
                     # Build the Prolog clause
                     prolog_clause = f"disease(Age, Fever, Cough, CholesterolLevel, BloodPressure, DifficultyBreathing, \"{diagnosis}\") :-\n"
                     condition_str = ',\n'.join([f"    {feature} {operator} {value}" for feature, operator, value in conditions])
-                    prolog_clause += condition_str + '.\n'
+                    prolog_clause += condition_str.replace('|', '') + '.\n'  # Ensure '|' is removed'
                     prolog_clauses.append(prolog_clause)
                     diagnosis = None
             else:
