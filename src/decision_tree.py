@@ -1,0 +1,122 @@
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier, export_text
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+
+
+def extract_decision_tree_rules(dataset_file):
+    # Carregar o dataset
+    df = pd.read_csv(dataset_file)
+
+    # Preparar os dados
+    le = LabelEncoder()
+    df['Fever'] = le.fit_transform(df['Fever'])
+    df['Cough'] = le.fit_transform(df['Cough'])
+    df['Fatigue'] = le.fit_transform(df['Fatigue'])
+    df['Difficulty Breathing'] = le.fit_transform(df['Difficulty Breathing'])
+    df['Gender'] = le.fit_transform(df['Gender'])
+    df['Blood Pressure'] = le.fit_transform(df['Blood Pressure'])
+    df['Cholesterol Level'] = le.fit_transform(df['Cholesterol Level'])
+
+    # Dividir em features (X) e target (y)
+    X = df.drop(columns=['Disease', 'Outcome Variable'])  # Features
+    y = df['Disease']  # Target
+
+    # Dividir o dataset em treino e teste
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42)
+
+    # Treinar o modelo de Árvore de Decisão
+    model = DecisionTreeClassifier(random_state=42)
+    model.fit(X_train, y_train)
+
+    # Extrair e interpretar as regras do modelo
+    tree_rules = export_text(model, feature_names=X.columns.tolist())
+    print(tree_rules)
+
+    return tree_rules, X
+
+
+dataset_file_path = './data/dataset.csv'
+rules_text, X = extract_decision_tree_rules(dataset_file_path)
+
+# print into a file the rules_text
+with open('./data/rules.txt', 'w') as f:
+    f.write(rules_text)
+
+
+def parse_rule(line):
+    """Parse a single rule line and return a tuple (condition, operator, value)."""
+    line = line.strip().replace('|--- ', '')
+    if '<=' in line:
+        condition, value = line.split(' <= ')
+        return condition.strip().replace(' ', ''), '=<', float(value.strip())
+    elif '>' in line:
+        condition, value = line.split(' > ')
+        return condition.strip().replace(' ', ''), '>', float(value.strip())
+    elif 'class:' in line:
+        return 'class', '=', line.split('class: ')[1].strip()
+    else:
+        return None
+
+
+def convert_to_prolog(input_file, output_file):
+    with open(input_file, 'r') as file:
+        lines = file.readlines()
+
+    prolog_clauses = []
+    conditions = []
+    diagnosis = None
+
+    for line in lines:
+        depth = line.count('|')
+        rule = parse_rule(line)
+
+        if rule:
+            # Remove conditions from the stack that have higher depth than current rule
+            while len(conditions) > depth:
+                conditions.pop()
+
+            if rule[0] == 'class':
+                diagnosis = rule[2]
+            else:
+                conditions.append(rule)
+
+            if diagnosis:
+                # Check for conflicting conditions (e.g., Age <= 32.5 and Age > 32.5)
+                conflicting_conditions = [
+                    cond for cond in conditions if cond[0] == 'Age']
+                if len(conflicting_conditions) > 1:
+                    # Remove conflicting conditions except the last one
+                    conditions = [
+                        cond for cond in conditions if cond not in conflicting_conditions[:-1]]
+
+                # Collect relevant variables for Prolog clause
+                age = next((val for (cond, op, val)
+                           in conditions if cond == 'Age'), None)
+                fever = next(
+                    (val for (cond, op, val) in conditions if cond == 'Fever'), None)
+                cough = next(
+                    (val for (cond, op, val) in conditions if cond == 'Cough'), None)
+                cholesterol_level = next(
+                    (val for (cond, op, val) in conditions if cond == 'CholesterolLevel'), None)
+                blood_pressure = next(
+                    (val for (cond, op, val) in conditions if cond == 'BloodPressure'), None)
+                difficulty_breathing = next(
+                    (val for (cond, op, val) in conditions if cond == 'DifficultyBreathing'), None)
+
+                # Build the Prolog clause without vertical bars (|)
+                prolog_clause = f"disease(Age, Fever, Cough, CholesterolLevel, BloodPressure, DifficultyBreathing, \"{
+                    diagnosis}\") :-\n"
+                prolog_clause += ',\n'.join(
+                    [f"    {cond} {op} {val}" for cond, op, val in conditions]).replace('|', '') + '.\n'
+                prolog_clauses.append(prolog_clause)
+                diagnosis = None
+
+    with open(output_file, 'w') as file:
+        for clause in prolog_clauses:
+            file.write(clause + '\n')
+
+
+# Use the function to convert the rules
+convert_to_prolog('./data/rules.txt', './data/rules.pl')

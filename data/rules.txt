@@ -1,0 +1,523 @@
+|--- Age <= 75.00
+|   |--- Difficulty Breathing <= 0.50
+|   |   |--- Age <= 51.00
+|   |   |   |--- Age <= 41.00
+|   |   |   |   |--- Age <= 39.00
+|   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |--- Cholesterol Level <= 0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |--- Age <= 32.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Bipolar Disorder
+|   |   |   |   |   |   |   |   |   |--- Age >  32.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Liver Cancer
+|   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Depression
+|   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Pancreatitis
+|   |   |   |   |   |   |   |--- Cholesterol Level >  0.50
+|   |   |   |   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Age <= 33.50
+|   |   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Common Cold
+|   |   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Diabetes
+|   |   |   |   |   |   |   |   |   |--- Age >  33.50
+|   |   |   |   |   |   |   |   |   |   |--- Cholesterol Level <= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Gastroenteritis
+|   |   |   |   |   |   |   |   |   |   |--- Cholesterol Level >  1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Influenza
+|   |   |   |   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |   |   |   |--- Cholesterol Level <= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Allergic Rhinitis
+|   |   |   |   |   |   |   |   |   |--- Cholesterol Level >  1.50
+|   |   |   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Kidney Disease
+|   |   |   |   |   |   |   |   |   |   |--- Blood Pressure >  1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |--- Blood Pressure <= 0.50
+|   |   |   |   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Eczema
+|   |   |   |   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |   |   |   |--- Age <= 32.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Eczema
+|   |   |   |   |   |   |   |   |   |--- Age >  32.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Migraine
+|   |   |   |   |   |   |   |--- Blood Pressure >  0.50
+|   |   |   |   |   |   |   |   |--- Age <= 28.50
+|   |   |   |   |   |   |   |   |   |--- Age <= 26.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Common Cold
+|   |   |   |   |   |   |   |   |   |--- Age >  26.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Hyperthyroidism
+|   |   |   |   |   |   |   |   |--- Age >  28.50
+|   |   |   |   |   |   |   |   |   |--- Cholesterol Level <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Age <= 33.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Anxiety Disorders
+|   |   |   |   |   |   |   |   |   |   |--- Age >  33.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Osteoporosis
+|   |   |   |   |   |   |   |   |   |--- Cholesterol Level >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Sinusitis
+|   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |   |--- Age <= 29.50
+|   |   |   |   |   |   |   |   |--- class: Pancreatitis
+|   |   |   |   |   |   |   |--- Age >  29.50
+|   |   |   |   |   |   |   |   |--- Age <= 36.50
+|   |   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Cholesterol Level <= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- Cholesterol Level >  1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Ulcerative Colitis
+|   |   |   |   |   |   |   |   |--- Age >  36.50
+|   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Liver Cancer
+|   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Migraine
+|   |   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |   |--- Cholesterol Level <= 0.50
+|   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Urinary Tract Infection
+|   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |--- Age <= 32.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Urinary Tract Infection
+|   |   |   |   |   |   |   |   |   |--- Age >  32.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Hyperthyroidism
+|   |   |   |   |   |   |   |--- Cholesterol Level >  0.50
+|   |   |   |   |   |   |   |   |--- Cholesterol Level <= 1.50
+|   |   |   |   |   |   |   |   |   |--- class: Rheumatoid Arthritis
+|   |   |   |   |   |   |   |   |--- Cholesterol Level >  1.50
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Rubella
+|   |   |   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Dengue Fever
+|   |   |   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Hyperthyroidism
+|   |   |   |   |--- Age >  39.00
+|   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Diabetes
+|   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |--- class: Psoriasis
+|   |   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |   |--- Cholesterol Level <= 1.00
+|   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Coronary Artery Disease
+|   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Hyperthyroidism
+|   |   |   |   |   |   |   |--- Cholesterol Level >  1.00
+|   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Osteoarthritis
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Hemophilia
+|   |   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Acne
+|   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Asthma
+|   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Lymphoma
+|   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |--- class: Psoriasis
+|   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |--- class: Chickenpox
+|   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |--- class: Gastroenteritis
+|   |   |   |--- Age >  41.00
+|   |   |   |   |--- Cholesterol Level <= 1.50
+|   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |--- Age <= 45.00
+|   |   |   |   |   |   |   |   |   |--- class: Influenza
+|   |   |   |   |   |   |   |   |--- Age >  45.00
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Eczema
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Hypertension
+|   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Multiple Sclerosis
+|   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Common Cold
+|   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |--- class: Allergic Rhinitis
+|   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |--- class: Lyme Disease
+|   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.50
+|   |   |   |   |   |   |   |   |   |--- class: Kidney Cancer
+|   |   |   |   |   |   |   |   |--- Blood Pressure >  1.50
+|   |   |   |   |   |   |   |   |   |--- class: Kidney Disease
+|   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |--- Cholesterol Level <= 0.50
+|   |   |   |   |   |   |   |--- Age <= 43.50
+|   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Hypothyroidism
+|   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Migraine
+|   |   |   |   |   |   |   |--- Age >  43.50
+|   |   |   |   |   |   |   |   |--- Age <= 46.50
+|   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Turner Syndrome
+|   |   |   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- Age >  46.50
+|   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Pancreatic Cancer
+|   |   |   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Ulcerative Colitis
+|   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Hypothyroidism
+|   |   |   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Crohn's Disease
+|   |   |   |   |   |   |--- Cholesterol Level >  0.50
+|   |   |   |   |   |   |   |--- Blood Pressure <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Kidney Disease
+|   |   |   |   |   |   |   |--- Blood Pressure >  0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.50
+|   |   |   |   |   |   |   |   |   |--- class: Depression
+|   |   |   |   |   |   |   |   |--- Blood Pressure >  1.50
+|   |   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Osteoarthritis
+|   |   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Stroke
+|   |   |   |   |--- Cholesterol Level >  1.50
+|   |   |   |   |   |--- Blood Pressure <= 0.50
+|   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |--- Age <= 47.50
+|   |   |   |   |   |   |   |   |--- class: Crohn's Disease
+|   |   |   |   |   |   |   |--- Age >  47.50
+|   |   |   |   |   |   |   |   |--- class: Endometriosis
+|   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Allergic Rhinitis
+|   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |--- class: Allergic Rhinitis
+|   |   |   |   |   |--- Blood Pressure >  0.50
+|   |   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |   |--- Age <= 43.50
+|   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Anxiety Disorders
+|   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Kidney Cancer
+|   |   |   |   |   |   |   |--- Age >  43.50
+|   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Age <= 47.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Migraine
+|   |   |   |   |   |   |   |   |   |--- Age >  47.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Rheumatoid Arthritis
+|   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Rheumatoid Arthritis
+|   |   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Sickle Cell Anemia
+|   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |--- Age <= 47.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Autism Spectrum Disorder
+|   |   |   |   |   |   |   |   |   |--- Age >  47.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Anemia
+|   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |--- class: Sepsis
+|   |   |--- Age >  51.00
+|   |   |   |--- Age <= 62.50
+|   |   |   |   |--- Cholesterol Level <= 0.50
+|   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |--- Age <= 57.50
+|   |   |   |   |   |   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Hemorrhoids
+|   |   |   |   |   |   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Hypothyroidism
+|   |   |   |   |   |   |   |   |   |--- Age >  57.50
+|   |   |   |   |   |   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Hypertension
+|   |   |   |   |   |   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Thyroid Cancer
+|   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |--- class: Chronic Kidney Disease
+|   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |--- class: Diabetes
+|   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |--- class: HIV/AIDS
+|   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Osteoarthritis
+|   |   |   |   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Tuberculosis
+|   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Osteoporosis
+|   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Osteoporosis
+|   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Coronary Artery Disease
+|   |   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |   |--- Age <= 57.50
+|   |   |   |   |   |   |   |   |--- class: Marfan Syndrome
+|   |   |   |   |   |   |   |--- Age >  57.50
+|   |   |   |   |   |   |   |   |--- class: Breast Cancer
+|   |   |   |   |--- Cholesterol Level >  0.50
+|   |   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Measles
+|   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |--- class: Parkinson's Disease
+|   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |--- Cholesterol Level <= 1.50
+|   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Hypertension
+|   |   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Anxiety Disorders
+|   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |--- Age <= 53.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Hypertension
+|   |   |   |   |   |   |   |   |   |--- Age >  53.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Typhoid Fever
+|   |   |   |   |   |   |   |--- Cholesterol Level >  1.50
+|   |   |   |   |   |   |   |   |--- class: Polycystic Ovary Syndrome
+|   |   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |   |--- Cholesterol Level <= 1.50
+|   |   |   |   |   |   |   |--- Age <= 57.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |--- class: Liver Disease
+|   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |--- class: Parkinson's Disease
+|   |   |   |   |   |   |   |--- Age >  57.50
+|   |   |   |   |   |   |   |   |--- class: Hepatitis B
+|   |   |   |   |   |   |--- Cholesterol Level >  1.50
+|   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Hypertension
+|   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Osteoporosis
+|   |   |   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Kidney Cancer
+|   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |--- Age <= 57.50
+|   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Osteoporosis
+|   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Multiple Sclerosis
+|   |   |   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Appendicitis
+|   |   |   |   |   |   |   |   |--- Age >  57.50
+|   |   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Hemophilia
+|   |   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Osteomyelitis
+|   |   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Polio
+|   |   |   |--- Age >  62.50
+|   |   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |--- class: Alzheimer's Disease
+|   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |--- class: Osteoporosis
+|   |   |   |   |--- Fatigue >  0.50
+|   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |--- Cholesterol Level <= 0.50
+|   |   |   |   |   |   |   |--- Age <= 67.50
+|   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Alzheimer's Disease
+|   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Osteoporosis
+|   |   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Liver Cancer
+|   |   |   |   |   |   |   |--- Age >  67.50
+|   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Testicular Cancer
+|   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Tonsillitis
+|   |   |   |   |   |   |--- Cholesterol Level >  0.50
+|   |   |   |   |   |   |   |--- Cholesterol Level <= 1.50
+|   |   |   |   |   |   |   |   |--- class: Stroke
+|   |   |   |   |   |   |   |--- Cholesterol Level >  1.50
+|   |   |   |   |   |   |   |   |--- Age <= 67.50
+|   |   |   |   |   |   |   |   |   |--- class: Urinary Tract Infection
+|   |   |   |   |   |   |   |   |--- Age >  67.50
+|   |   |   |   |   |   |   |   |   |--- class: Alzheimer's Disease
+|   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |--- Cholesterol Level <= 1.00
+|   |   |   |   |   |   |   |--- Age <= 67.50
+|   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Lung Cancer
+|   |   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Diabetes
+|   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Diabetes
+|   |   |   |   |   |   |   |--- Age >  67.50
+|   |   |   |   |   |   |   |   |--- class: Gout
+|   |   |   |   |   |   |--- Cholesterol Level >  1.00
+|   |   |   |   |   |   |   |--- Age <= 67.50
+|   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Bladder Cancer
+|   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Otitis Media
+|   |   |   |   |   |   |   |--- Age >  67.50
+|   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Williams Syndrome
+|   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Cholecystitis
+|   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Schizophrenia
+|   |--- Difficulty Breathing >  0.50
+|   |   |--- Age <= 62.50
+|   |   |   |--- Fatigue <= 0.50
+|   |   |   |   |--- Age <= 47.50
+|   |   |   |   |   |--- Blood Pressure <= 1.50
+|   |   |   |   |   |   |--- Age <= 29.00
+|   |   |   |   |   |   |   |--- class: Asthma
+|   |   |   |   |   |   |--- Age >  29.00
+|   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Bronchitis
+|   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Depression
+|   |   |   |   |   |   |   |   |--- Blood Pressure >  0.50
+|   |   |   |   |   |   |   |   |   |--- Age <= 34.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Osteoporosis
+|   |   |   |   |   |   |   |   |   |--- Age >  34.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Liver Disease
+|   |   |   |   |   |--- Blood Pressure >  1.50
+|   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Liver Disease
+|   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |--- class: Asthma
+|   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |--- class: Asthma
+|   |   |   |   |--- Age >  47.50
+|   |   |   |   |   |--- Age <= 53.50
+|   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |--- class: Kidney Disease
+|   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |--- class: Urinary Tract Infection
+|   |   |   |   |   |--- Age >  53.50
+|   |   |   |   |   |   |--- class: Pneumonia
+|   |   |   |--- Fatigue >  0.50
+|   |   |   |   |--- Age <= 27.00
+|   |   |   |   |   |--- class: Influenza
+|   |   |   |   |--- Age >  27.00
+|   |   |   |   |   |--- Age <= 52.50
+|   |   |   |   |   |   |--- Age <= 47.50
+|   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |   |--- Age <= 32.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Rheumatoid Arthritis
+|   |   |   |   |   |   |   |   |   |--- Age >  32.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Asthma
+|   |   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |   |--- Age <= 37.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Cerebral Palsy
+|   |   |   |   |   |   |   |   |   |--- Age >  37.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Kidney Cancer
+|   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Age <= 31.00
+|   |   |   |   |   |   |   |   |   |   |--- Age <= 29.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Liver Cancer
+|   |   |   |   |   |   |   |   |   |   |--- Age >  29.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Asthma
+|   |   |   |   |   |   |   |   |   |--- Age >  31.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Pneumonia
+|   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- Blood Pressure >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Cholesterol Level <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Cholesterol Level >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- Age >  47.50
+|   |   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |   |--- Cough <= 0.50
+|   |   |   |   |   |   |   |   |   |--- Fever <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Pneumothorax
+|   |   |   |   |   |   |   |   |   |--- Fever >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Cholera
+|   |   |   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: Sleep Apnea
+|   |   |   |   |   |   |   |   |--- Cough >  0.50
+|   |   |   |   |   |   |   |   |   |--- Cholesterol Level <= 1.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Liver Cancer
+|   |   |   |   |   |   |   |   |   |--- Cholesterol Level >  1.00
+|   |   |   |   |   |   |   |   |   |   |--- class: Gastroenteritis
+|   |   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |   |--- Cholesterol Level <= 1.00
+|   |   |   |   |   |   |   |   |   |--- class: Asthma
+|   |   |   |   |   |   |   |   |--- Cholesterol Level >  1.00
+|   |   |   |   |   |   |   |   |   |--- class: Ebola Virus
+|   |   |   |   |   |--- Age >  52.50
+|   |   |   |   |   |   |--- Blood Pressure <= 1.00
+|   |   |   |   |   |   |   |--- Age <= 55.50
+|   |   |   |   |   |   |   |   |--- Cholesterol Level <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Bronchitis
+|   |   |   |   |   |   |   |   |--- Cholesterol Level >  0.50
+|   |   |   |   |   |   |   |   |   |--- Cholesterol Level <= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Osteoporosis
+|   |   |   |   |   |   |   |   |   |--- Cholesterol Level >  1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: Bronchitis
+|   |   |   |   |   |   |   |--- Age >  55.50
+|   |   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: Kidney Disease
+|   |   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: Influenza
+|   |   |   |   |   |   |--- Blood Pressure >  1.00
+|   |   |   |   |   |   |   |--- Gender <= 0.50
+|   |   |   |   |   |   |   |   |--- class: Migraine
+|   |   |   |   |   |   |   |--- Gender >  0.50
+|   |   |   |   |   |   |   |   |--- class: Common Cold
+|   |   |--- Age >  62.50
+|   |   |   |--- class: Chronic Obstructive Pulmonary Disease
+|--- Age >  75.00
+|   |--- class: Stroke
