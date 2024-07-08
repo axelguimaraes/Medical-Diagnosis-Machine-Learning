@@ -1,10 +1,11 @@
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier, export_text
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import export_text
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 
-def extract_decision_tree_rules(dataset_file):
+def extract_random_forest_rules(dataset_file, n_trees=10):
     # Carregar o dataset
     df = pd.read_csv(dataset_file)
 
@@ -30,15 +31,17 @@ def extract_decision_tree_rules(dataset_file):
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42)
 
-    # Treinar o modelo de Árvore de Decisão
-    model = DecisionTreeClassifier(
-        random_state=42, max_depth=30, min_samples_split=2, min_samples_leaf=1)
+    # Treinar o modelo de RandomForest
+    model = RandomForestClassifier(n_estimators=n_trees, random_state=42)
     model.fit(X_train, y_train)
 
-    # Extrair e interpretar as regras do modelo
-    tree_rules = export_text(model, feature_names=X.columns.tolist())
+    # Extrair regras de cada árvore na floresta
+    rules_text = []
+    for idx, tree in enumerate(model.estimators_):
+        tree_rules = export_text(tree, feature_names=X.columns.tolist())
+        rules_text.append(f"{tree_rules}")
 
-    return tree_rules, X
+    return "\n".join(rules_text), X
 
 
 def parse_rule(line):
@@ -116,7 +119,6 @@ def convert_to_prolog(input_file, output_file):
                     for feature, operator, value in conditions:
                         print(feature, operator, value)
                         clean_feature = feature.replace(' ', '')
-                        print(clean_feature)
 
                         condition_dict[clean_feature] = f'{clean_feature}'
 
@@ -150,7 +152,7 @@ def convert_to_prolog(input_file, output_file):
 
 # Use the function to convert the rules to Prolog format
 dataset_file_path = './data/dataset.csv'
-rules_text, X = extract_decision_tree_rules(dataset_file_path)
+rules_text, X = extract_random_forest_rules(dataset_file_path)
 
 # Print into a file the rules_text
 with open('./data/rules.txt', 'w') as f:
