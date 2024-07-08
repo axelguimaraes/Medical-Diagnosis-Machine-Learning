@@ -21,7 +21,7 @@ def run_prolog_diagnosis(query, prolog_content):
         print(f"Prolog Query: {query}")  # Debug print
         print(f"Prolog Content: {prolog_content}")  # Debug print
 
-        commands = prolog_content + query
+        commands = prolog_content + "\n"+query
         print(f"Prolog Commands: {commands}")  # Debug print
         # Inicializa o subprocesso SWI-Prolog
 
@@ -38,20 +38,15 @@ def run_prolog_diagnosis(query, prolog_content):
         output_lines = stdout.strip().split('\n')
         # Get the string that contain Disease and Outcome
         filtered_lines = [
-            line for line in output_lines if 'Disease' in line or 'Outcome' in line]
+            line for line in output_lines if 'Outcome' in line]
         # Captura as últimas duas linhas que contêm "Disease" e "Outcome"
         p.kill()
         print(f"Saída padrão: {stdout}")
         print(f"Filtra as linhas: {filtered_lines}")
-        if len(filtered_lines) >= 2:
-            last_two_lines = filtered_lines[-2:]
-            result = '\n'.join(last_two_lines).strip()
-            print("Últimas duas respostas com 'Disease' e 'Outcome':")
-            print(result)
-            return result, None
-        else:
-            print("Não há dados suficientes na saída para capturar as últimas duas respostas com 'Disease' e 'Outcome'.")
-            return None, "Não há dados suficientes na saída para capturar as últimas duas respostas com 'Disease' e 'Outcome'."
+        # Extrai o resultado do diagnóstico da última linha
+        string_result = filtered_lines[-1]
+        print(f"Resultado da string: {string_result}")
+        return string_result, None
     except Exception as e:
         print(f"Erro ao executar consulta Prolog: {e}")
         return None, str(e)
@@ -81,29 +76,28 @@ while True:
         break
     if event == 'Diagnose':
         # Construir a consulta Prolog a partir dos valores de entrada
-        disease_name = "Disease"  # Placeholder for disease name
-        query = f"disease({disease_name}, "
+        query = f"disease("
+        query += f"{values['age']}, "
         query += f"{1 if values['fever'] else 0}, "
         query += f"{1 if values['cough'] else 0}, "
-        query += f"{1 if values['fatigue'] else 0}, "
-        query += f"{1 if values['difficulty_breathing'] else 0}, "
-        query += f"{values['age']}, "
         query += f"{1 if values['gender'] == 'Male' else 0}, "
-        query += f"{0 if values['blood_pressure'] ==
-                    'Low' else (1 if values['blood_pressure'] == 'Normal' else 2)}, "
         query += f"{0 if values['cholesterol_level'] == 'Low' else (
             1 if values['cholesterol_level'] == 'Normal' else 2)}, "
+        query += f"{0 if values['blood_pressure'] ==
+                    'Low' else (1 if values['blood_pressure'] == 'Normal' else 2)}, "
+        query += f"{1 if values['difficulty_breathing'] else 0}, "
+
         query += "Outcome)."
 
         print(f"Prolog Query: {query}")  # Debug print
 
         # Ler o conteúdo do arquivo Prolog
-        prolog_file_path = './knowledge_base/disease_decision_tree.pl'
+        prolog_file_path = './data/unique_rules.pl'
         prolog_content = read_prolog_file(prolog_file_path)
 
         if prolog_content is None:
             sg.popup_error(f"Erro ao ler o arquivo Prolog: {prolog_file_path}")
-            continue
+            break
 
         # Executa a consulta Prolog com base nos sintomas e dados inseridos
         result, error = run_prolog_diagnosis(query, prolog_content)
